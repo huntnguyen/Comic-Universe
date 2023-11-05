@@ -32,6 +32,7 @@ const WelcomeScreen = (props) => {
         <Button 
           title = {"Continue without account"} 
           color="gold"
+          onPress={() => props.navigation.navigate('HomeScreen')}
         />
         </View>
         
