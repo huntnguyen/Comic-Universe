@@ -19,14 +19,14 @@ const HomeScreen = function(props){
             //    console.log(response.data)
           //  }); 
        const response = await API.get('http://comicvine.gamespot.com/api/issues/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8& filter=name: X-men&field_list=name', {
-         params: {
-          format: "json",
-          api_key: "YOUR API KEY"
-         }
-       });
-       setResults(response.results);
-       console.log(response);
-    }
+        params: {
+         format: "json",
+         api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8"
+        }
+      });
+      setResults(response.results);
+      console.log(response);
+   }
     catch(e){
       console.log(e, "error");
     }
