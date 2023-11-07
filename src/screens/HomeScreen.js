@@ -12,18 +12,20 @@ const HomeScreen = function(props){
   const searchApi = async function(name){
     try{
         axios 
-            .get("https://superheroapi.com/api/" + 
-             "API KEY" +
-                "/search/ironman")
-            .then((response) => { 
-                console.log(response.data)
-            }); 
-      // const response = await API.get('/character', {
-      //   params: {
-      //   }
-      // });
-      // setResults(response.results);
-      // console.log(response.results);
+            //.get("https://superheroapi.com/api/" + 
+           // 393090373041973 +
+               // "/search/ironman")
+           // .then((response) => { 
+            //    console.log(response.data)
+          //  }); 
+       const response = await API.get('http://comicvine.gamespot.com/api/issues/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8& filter=name: X-men&field_list=name', {
+         params: {
+          format: "json",
+          api_key: "YOUR API KEY"
+         }
+       });
+       setResults(response.results);
+       console.log(response);
     }
     catch(e){
       console.log(e, "error");
