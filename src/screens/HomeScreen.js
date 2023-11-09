@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Text, StyleSheet, View, Button, Image} from "react-native";
+import { Text, StyleSheet, View, Button, Image, FlatList} from "react-native";
 import API from "../api/API"
 import SearchBar from '../components/SearchBar';
 import axios from "axios"
@@ -18,14 +18,19 @@ const HomeScreen = function(props){
            // .then((response) => { 
             //    console.log(response.data)
           //  }); 
-       const response = await API.get('http://comicvine.gamespot.com/api/issues/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8& filter=name: X-men&field_list=name', {
+       const response = await API.get(`http://comicvine.gamespot.com/api/issues/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8& filter=name: ${name} &field_list=name`, {
         params: {
          format: "json",
          api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8"
         }
       });
-      setResults(response.results);
-      console.log(response);
+      setResults(response.data.results);
+      // console.log(Object.keys(response));
+      console.log(response.data.results)
+        // console.log(response.statusText )
+          // console.log(response.headers )
+            // console.log(response.config )
+              // console.log(response.request)
    }
     catch(e){
       console.log(e, "error");
@@ -37,8 +42,14 @@ const HomeScreen = function(props){
       <Button title = {"test API"}
         onPress={function(){searchApi()}}
       /> 
-      <Text>Home</Text>
-      <Text>{results}</Text>
+      <SearchBar searchTerm = {searchTerm} 
+        onTermChange = {function(newName){setSearchTerm(newName)}}
+        onSearchTermSubmit = {function(){searchApi(searchTerm)}}
+      />
+      <Text>Name: {searchTerm}</Text>
+      {results.map(function(item, index){
+        return <Text>{item.name}</Text>
+      })}
     </View>
   
 };
