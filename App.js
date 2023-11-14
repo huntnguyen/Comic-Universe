@@ -11,7 +11,7 @@ const navigator = createStackNavigator({
         Character: CharacterScreen,
 },
 {
-        initialRouteName: "Character",
+        initialRouteName: "Welcome",
         defaultNavigationOptions: {
             title : "Business Search"
         }
