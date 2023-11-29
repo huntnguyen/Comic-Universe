@@ -27,11 +27,12 @@ const HomeScreen = function(props){
   const searchApi = async function(name){
     try{
         axios 
-       const response = await API.get(`http://comicvine.gamespot.com/api/issues/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8& filter=name: ${name} &field_list=name`, {
-        params: {
-         format: "json",
-         api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8"
-        }
+        const response = await API.get(`https://comicvine.gamespot.com/api/characters/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8&filter=name:${name}&format=json`, {
+          params: {
+           format: "json",
+           api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8",
+           limit: 10
+          }
       });
       setResults(response.data.results);
    }
