@@ -15,7 +15,7 @@ const navigator = createStackNavigator({
         CreateAccount: CreateAccountScreen
 },
 {
-        initialRouteName: "HomeScreen",
+        initialRouteName: "Home",
         defaultNavigationOptions: {
             title : "Business Search"
         }
