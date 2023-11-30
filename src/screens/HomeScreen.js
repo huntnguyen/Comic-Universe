@@ -31,7 +31,7 @@ const HomeScreen = function(props){
           params: {
            format: "json",
            api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8",
-           limit: 10
+           limit: 50
           }
       });
       setResults(response.data.results);
@@ -55,7 +55,7 @@ const HomeScreen = function(props){
         return <Text>{item.name}</Text>
       })}
 
-      <Image resizeMode = "contain" style = {styles.image} source = { {uri: "https://comicvine.gamespot.com/a/uploads/scale_medium/6/68065/7666828-lightninglad05.jpg"}} />
+     <Image resizeMode = "contain" style = {styles.image} source = { {uri: "https://comicvine.gamespot.com/a/uploads/original/0/4/76-886-77-1-daredevil-comics.jpg"}} />
     </View>
   
 };

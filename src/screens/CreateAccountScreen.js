@@ -28,7 +28,7 @@ const CreateAccountScreen = (props) => {
         <Button 
           title = {"Create an Account"} 
           color="gold"
-          onPress={() => props.navigation.navigate('HomeScreen')}
+          onPress={() => props.navigation.navigate('Character')}
         />
         </View>
         

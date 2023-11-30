@@ -29,7 +29,7 @@ const LoginScreen = (props) => {
         <Button 
           title = {"Login"} 
           color="gold"
-          onPress={() => props.navigation.navigate('HomeScreen')}
+          onPress={() => props.navigation.navigate('Character')}
         />
         </View>
         

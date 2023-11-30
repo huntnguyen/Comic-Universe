@@ -7,7 +7,7 @@ import ResultScreen from "./src/screens/ResultScreen";
 
 const navigator = createStackNavigator({
         Welcome : WelcomeScreen,
-        HomeScreen: HomeScreen,
+        Home: HomeScreen,
         Character: CharacterScreen,
         ResultScreen: ResultScreen,
 },
