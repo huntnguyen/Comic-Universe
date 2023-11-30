@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image} from "react-native";
 import bg from '../../assets/comicbg.gif'
 import DCIcons from "../components/DCIcons";
 import MarvelIcons from "../components/MarvelIcons";
 
 const CharacterScreen =(props) => {
+
   return (
     <ImageBackground
       style={styles.container}
@@ -20,9 +21,9 @@ const CharacterScreen =(props) => {
       
       <View style={styles.center}>
         <Image style ={styles.image2} source={require('../../assets/marvellogo.png')}/>
-        <MarvelIcons />
+        <MarvelIcons navigation={props.navigation}/>
         <Image style={styles.image3} source={require('../../assets/dclogo.png')}/>
-        <DCIcons />
+        <DCIcons navigation={props.navigation}/>
       </View>
     </ImageBackground>
   );
