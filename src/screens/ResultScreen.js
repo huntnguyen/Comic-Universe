@@ -1,16 +1,20 @@
 import React from "react";
-import { Text, StyleSheet, View, Button, TouchableOpacity} from "react-native";
+import { Text, StyleSheet, View, Button, Image,TouchableOpacity} from "react-native";
 
 
 const ResultScreen = (props) => {
   const results = props.navigation.getParam("results");
-
+  const name = props.navigation.getParam("name")
 
   return (
     <View style = {styles.root}>
-      <Text>Name: {results.name}</Text>
-      {results.forEach(function(item, index){
-        console.log(item);
+      <Text>Name: {name}</Text>
+      {/* <Image source= {{uri: results[1].image.icon_url }}/> */}
+      {/* {console.log(Object.keys(results[0]))} */}
+      {results.map(function(item, index){
+        console.log(item, index, '\n');
+        
+        return <Text>{item.name}</Text>
       })}
       
     </View>

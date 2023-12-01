@@ -35,6 +35,7 @@ const HomeScreen = function(props){
           }
       });
       setResults(response.data.results);
+      console.log(results);
    }
     catch(e){
       console.log(e, "error");
