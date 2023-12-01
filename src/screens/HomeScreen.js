@@ -11,11 +11,11 @@ const HomeScreen = function (props) {
   const imageResults = async function (image) {
     try {
       const response = await API.get(
-        `http://comicvine.gamespot.com/api/issues/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8&filter=image:${image}&field_list=image`,
+        `http://comicvine.gamespot.com/api/issues/?api_key=5e30e068623ccb54a850a711b739bbcdf34afa3b&filter=image:${image}&field_list=image`,
         {
           params: {
             format: "json",
-            api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8",
+            api_key: "5e30e068623ccb54a850a711b739bbcdf34afa3b",
           },
         }
       );
@@ -35,7 +35,7 @@ const HomeScreen = function (props) {
         {
           params: {
             format: "json",
-            api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8",
+            api_key: "5e30e068623ccb54a850a711b739bbcdf34afa3b",
             limit: 50,
           },
         }

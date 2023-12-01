@@ -9,23 +9,51 @@ const DCIcons = (props) => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
-  const searchApi = async function(name){
-    try{
-        axios 
-        const response = await API.get(`https://comicvine.gamespot.com/api/characters/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8&filter=name:${name}&format=json`, {
+  const [imageUrl, setImageUrl] = useState("");
+
+  const imageResults = async function (image) {
+    try {
+      const response = await API.get(
+        `http://comicvine.gamespot.com/api/issues/?api_key=5e30e068623ccb54a850a711b739bbcdf34afa3b&filter=image:${image}&field_list=image`,
+        {
           params: {
-           format: "json",
-           api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8",
-           limit: 10
-          }
-      });
-      setResults(response.data.results);
-      // console.log(results);
-   }
-    catch(e){
+            format: "json",
+            api_key: "5e30e068623ccb54a850a711b739bbcdf34afa3b",
+          },
+        }
+      );
+     
+      
+      setImageUrl(response.data.results[5].image.original_url);
+    } catch (e) {
       console.log(e, "error");
+      
     }
-  }
+  };
+
+  const searchApi = async function (name) {
+    try {
+      const response = await API.get(
+        `https://comicvine.gamespot.com/api/issues/?api_key=&filter=name:${name}&format=json`,
+        {
+          params: {
+            format: "json",
+            api_key: "5e30e068623ccb54a850a711b739bbcdf34afa3b",
+            limit: 50,
+          },
+        }
+      );
+      setResults(response.data.results);
+     
+      response.data.results.forEach((issue) => {
+        imageResults(issue.image.original_url);
+      });
+      } 
+      catch (e) {
+      console.log(e, "error");
+      
+    }
+  };
   
   return (
     <View style={{flexDirection: "row", flexWrap: 'wrap', justifyContent: "space-between"}}>
