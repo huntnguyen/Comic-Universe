@@ -1,35 +1,41 @@
+{/* imports */}
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image, TextInput} from "react-native";
 import bg from '../../assets/comicbg.gif'
 import Images from "../components/Images";
 
-//mike: testing for file update
-
+{/* main component: CreateAccontScreen */}
 const CreateAccountScreen = (props) => {
 
   return (
     <View style = {styles.root}>
-
       <ImageBackground
         style = {styles.container}
         imageStyle={styles.image}
         source = {bg}
         resizeMode = 'cover'
       >
+        {/* Header */}
         <Text style={styles.text}>Create{"\n"} Account</Text>
+        
+        {/* homepage picture */}
         <Images style = {styles.image2} imageSource={require('../../assets/superhero.png')}/>
-        <View style={styles.button1}>
-        <TextInput placeholder="Enter New Username"/>
+
+        {/* text inputs */}
+        <View style={styles.textInputs}>
+           <TextInput placeholder="Enter New Username"/>
         </View>
-        <View style={styles.button1}>
-        <TextInput placeholder="Enter New Password"/>
+        <View style={styles.textInputs}>
+           <TextInput placeholder="Enter New Password"/>
         </View>
+
+        {/* main button */}
         <View style={styles.button}>
-        <Button 
-          title = {"Create an Account"} 
-          color="gold"
-          onPress={() => props.navigation.navigate('HomeScreen')}
-        />
+          <Button 
+            title = {"Create an Account"} 
+            color="gold"
+            onPress={() => props.navigation.navigate('HomeScreen')}
+          />
         </View>
         
       </ImageBackground>
@@ -38,7 +44,7 @@ const CreateAccountScreen = (props) => {
   
 };
 
-
+{/* stylesheet */}
 const styles = StyleSheet.create({
   root: {
     flex: 1
@@ -78,7 +84,7 @@ const styles = StyleSheet.create({
   image2: {
     marginBottom: 20,
   },
-  button1: {
+  textInputs: {
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 12,

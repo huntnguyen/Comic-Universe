@@ -12,10 +12,10 @@ const HomeScreen = function(props){
   const imageResults = async function(image){
     try{
         axios 
-       const response = await API.get(`http://comicvine.gamespot.com/api/issues/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8& filter=image: ${image} &field_list=image`, {
+       const response = await API.get(`http://gateway.marvel.com:443.v1/public/characters?api_key=dff030ce0e826aa0298a7c486992e6e filter=image: ${image} &field_list=image`, {
         params: {
          format: "json",
-         api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8"
+         api_key: "dff030ce0e826aa0298a7c486992e6e"
         }
       });
       console.log(response.data.results)
@@ -27,10 +27,10 @@ const HomeScreen = function(props){
   const searchApi = async function(name){
     try{
         axios 
-        const response = await API.get(`https://comicvine.gamespot.com/api/characters/?api_key=3a531bfb45a299035190b4b0860d42972ddd2de8&filter=name:${name}&format=json`, {
+        const response = await API.get(`https://comicvine.gamespot.com/api/characters/?api_key=dff030ce0e826aa0298a7c486992e6e&filter=name:${name}&format=json`, {
           params: {
            format: "json",
-           api_key: "3a531bfb45a299035190b4b0860d42972ddd2de8",
+           api_key: "dff030ce0e826aa0298a7c486992e6e",
            limit: 10
           }
       });

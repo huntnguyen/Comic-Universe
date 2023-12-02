@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image} from "react-native";
+import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image, KeyboardAvoidingView} from "react-native";
+import { useState } from "react";
 import bg from '../../assets/comicbg.gif'
 import Images from "../components/Images";
 import { TextInput } from "react-native-gesture-handler";
@@ -7,6 +8,33 @@ import { TextInput } from "react-native-gesture-handler";
 //mike: testing for file update
 
 const LoginScreen = (props) => {
+
+  //user credentials
+  const [ username , setUserName ] = useState("");
+	const [ password , setPassword ] = useState("");
+	const [  errors  , setErrors   ] = useState({});
+
+  //major function to validate user entry
+	const validateForm = ()=> {
+		let errors = {}
+
+		if (!username) errors.username = "username is required"; 
+		if (!password) errors.password = "password is required"; 
+
+		return Object.keys(errors).length === 0;
+	}
+
+  //handler submit function
+	const handleSubmit = () => {
+        if(validateForm()){
+        props.navigation.navigate("HomeScreen")
+        console.log("Submitted", username, password);
+        setUsername("");
+        setPassword("");
+        setErrors({});
+		  }
+		}
+	
 
   return (
     <View style = {styles.root}>
@@ -19,25 +47,43 @@ const LoginScreen = (props) => {
       >
         <Text style={styles.text}>Login {"\n"} Screen</Text>
         <Images style = {styles.image2} imageSource={require('../../assets/superhero.png')}/>
+
+       
         <View style={styles.button1}>
-        <TextInput placeholder="Enter Username"/>
+        <TextInput placeholder="Enter your username"
+                   value={username}
+				           onChangeText={setUserName}/>
+        { errors.username ? <Text style = {styles.errorText}>errors.password</Text> : null }
         </View>
+
         <View style={styles.button1}>
-        <TextInput placeholder="Enter Password"/>
+        <TextInput placeholder="Enter your password"
+                    secureTextEntry
+                    value = {password}
+                    onChangeText={setPassword}/>
+        { 	errors.username ? <Text style = {styles.errorText}>errors.username</Text> : null  }
         </View>
+
         <View style={styles.button}>
         <Button 
           title = {"Login"} 
           color="gold"
-          onPress={() => props.navigation.navigate('HomeScreen')}
-        />
+          onPress={() => ( handleSubmit )} />
+
+          {/*  onPress={() => props.navigation.navigate('HomeScreen')} */}
         </View>
+        
         
       </ImageBackground>
     </View>
-  );
-  
+  )
 };
+{/*<KeyboardAvoidingView behavior="padding" 
+		                      style={style.container}
+		                      keyboardVerticalOffset={Platform.OS === "ios" ? 100 : 0} >*
+</KeyboardAvoidingView>*/}
+
+{/*********** Authemtication ends  *******************/}
 
 
 const styles = StyleSheet.create({

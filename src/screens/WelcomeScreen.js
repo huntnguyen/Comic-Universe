@@ -22,12 +22,14 @@ const WelcomeScreen = (props) => {
         <Button 
           title = {"Create Account"} 
           color="gold"
+          onPress={() => props.navigation.navigate('CreateAccount')}
         />
         </View>
         <View style={styles.button}>
         <Button 
-          title = {"Login"} 
+          title = {"HomeScreen"} 
           color="gold"
+          onPress={() => props.navigation.navigate('Login')}
         />
         </View>
         <View style={styles.button}>

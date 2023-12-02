@@ -1,9 +1,11 @@
+{/* imports */}
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image} from "react-native";
 import bg from '../../assets/comicbg.gif'
 import DCIcons from "../components/DCIcons";
 import MarvelIcons from "../components/MarvelIcons";
 
+{/* main conmponent: CharacterScreen */}
 const CharacterScreen =(props) => {
   return (
     <ImageBackground
@@ -12,12 +14,14 @@ const CharacterScreen =(props) => {
       source={bg}
       resizeMode='cover'
     >
+      {/* header info text */}
       <View style={styles.textBox}>
         <Text style={styles.text}>
           Choose a character to read about
         </Text>
       </View>
       
+      {/* body display images */}
       <View style={styles.center}>
         <Image style ={styles.image2} source={require('../../assets/marvellogo.png')}/>
         <MarvelIcons />
@@ -28,6 +32,7 @@ const CharacterScreen =(props) => {
   );
 };
 
+{/* stylesheets */}
 const styles = StyleSheet.create({
   container:{
     flex: 1,
