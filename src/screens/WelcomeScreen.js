@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Imag
 import bg from '../../assets/comicbg.gif'
 import Images from "../components/Images";
 
-//mike: testing for file update
+
 
 const WelcomeScreen = (props) => {
 
