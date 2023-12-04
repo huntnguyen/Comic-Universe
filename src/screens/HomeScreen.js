@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
-import { Text, StyleSheet, View, Button, Image, FlatList, TouchableOpacity} from "react-native";
+import { Text, StyleSheet, View, Button, Image, FlatList, TouchableOpacity, ImageBackground} from "react-native";
 import API from "../api/API"
+import bg from '../../assets/comicbg3.jpeg'
 import SearchBar from '../components/SearchBar';
 
 const HomeScreen = function (props) {
@@ -21,7 +22,7 @@ const HomeScreen = function (props) {
       );
      
       
-      setImageUrl(response.data.results[5].image.original_url);
+      setImageUrl(response.data.results[5].image.original_url); 
     } catch (e) {
       console.log(e, "error");
       
@@ -54,7 +55,11 @@ const HomeScreen = function (props) {
 
   return ( 
     <View style={styles.root}>
-      
+     <ImageBackground
+      imageStyle={styles.backgroundImage}
+      source= {bg}
+      resizeMode='cover'
+    />
       <SearchBar
         searchTerm={searchTerm}
         onTermChange={function (newName) {
@@ -69,10 +74,10 @@ const HomeScreen = function (props) {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View>
-            <Text>Name: {item.name}</Text>
+            <Text style = {styles.text}>Name: {item.name}</Text>
             <TouchableOpacity>
             <Image source={{ uri: item.image.original_url }}
-            style={{ width: 300, height: 500 }}  />
+            style={styles.image}  />
            </TouchableOpacity>
           </View>
         )}
@@ -87,11 +92,24 @@ const styles = StyleSheet.create({
     flex: 1
   },
   image: {
-    height: 50,
-    width: 50,
-    justifyContent: "center"
-
-  }
+    height: 300,
+    width: 390,
+    justifyContent: "center",
+    resizeMode: "contain"
+  },
+  backgroundImage: {
+    flex: 1, 
+    width: 500, 
+    height: 900, 
+    resizeMode: 'cover',
+  },
+  text:{
+    textAlign: 'center',
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: 'white',
+    padding: 10
+  },
 });
 
 export default HomeScreen;

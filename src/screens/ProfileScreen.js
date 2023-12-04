@@ -2,6 +2,7 @@
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image, TextInput} from "react-native";
 import bg from '../../assets/comicbg.gif'
+import BottomNavBar from "../components/BottomNavBar";
 import Images from "../components/Images";
 
 
@@ -62,32 +63,7 @@ const ProfileScreen = (props) => {
             />
             </View>
         </View>
-        
-       {/* Navigation buttons: "Home", "List", "Profile" */}
-        <View style={styles.buttonContainer}>
-            <View style={styles.button}>
-            <Button 
-            title = {"HOME"} 
-            color="gold"
-            onPress={() => props.navigation.navigate('HomeScreen')}
-            />
-            </View>
-            <View style={styles.button}>
-            <Button 
-            title = {"LIST"} 
-            color="gold"
-            onPress={() => props.navigation.navigate('HomeScreen')}
-            />
-            </View>
-            <View style={styles.button}>
-            <Button 
-            title = {"PROFILE"} 
-            color="gold"
-            onPress={() => props.navigation.navigate('HomeScreen')}
-            />
-            </View>
-        </View>
-        
+       <BottomNavBar/> 
       </ImageBackground>
     </View>
   );
@@ -158,8 +134,8 @@ const styles = StyleSheet.create({
   },
   image1: {
     marginBottom: 5,
-    width: 10,
-    height: 10,
+    width: 5,
+    height: 5,
     resizeMode: 'cover',
   },
   screenButtons:{

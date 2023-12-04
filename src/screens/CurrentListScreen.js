@@ -97,21 +97,21 @@ const CurrentListScreen = (props) => {
             <Button 
             title = {"HOME"} 
             color="gold"
-            onPress={() => props.navigation.navigate('HomeScreen')}
+            onPress={() => props.navigation.navigate('Home')}
             />
             </View>
             <View style={styles.button}>
             <Button 
             title = {"LIST"} 
             color="gold"
-            onPress={() => props.navigation.navigate('HomeScreen')}
+            onPress={() => props.navigation.navigate('CreateList')}
             />
             </View>
             <View style={styles.button}>
             <Button 
             title = {"PROFILE"} 
             color="gold"
-            onPress={() => props.navigation.navigate('HomeScreen')}
+            onPress={() => props.navigation.navigate('Profile')}
             />
             </View>
         </View>

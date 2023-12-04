@@ -69,7 +69,7 @@ const DCIcons = (props) => {
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("Wonder woman"); props.navigation.navigate("ResultScreen", {results: results})}}>
         <View style={{ width: width/3}}>
-          <Image style={styles.image} source={require('../../assets/Wonderwoman.webp')} resizeMode={'stretch'} />
+          <Image style={styles.image} source={require('../../assets/wonderwoman.png')} resizeMode={'stretch'} />
         </View>
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("flash"); props.navigation.navigate("ResultScreen", {results: results})}}>
@@ -77,9 +77,9 @@ const DCIcons = (props) => {
           <Image style={styles.image} source={require('../../assets/flash.png')} resizeMode={'stretch'} />
         </View>
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("aquaman"); props.navigation.navigate("ResultScreen", {results: results})}}>
+      <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("joker"); props.navigation.navigate("ResultScreen", {results: results})}}>
         <View style={{ width: width/3}}>
-          <Image style={styles.image} source={require('../../assets/aquaman.webp')} resizeMode={'stretch'} />
+          <Image style={styles.image} source={require('../../assets/joker.png')} resizeMode={'stretch'} />
         </View>
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("green lantern"); props.navigation.navigate("ResultScreen", {results: results})}}>

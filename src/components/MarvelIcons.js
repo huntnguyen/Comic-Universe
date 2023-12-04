@@ -1,3 +1,5 @@
+//Marvel Icons by: icon by Icons8
+
 import React, {useState, useEffect} from "react";
 import { Text, View, StyleSheet, Button, TouchableOpacity, Image, Dimensions } from "react-native";
 import axios from "axios"
@@ -63,14 +65,14 @@ const MarvelIcons = (props) => {
           <Image style={styles.image} source={require('../../assets/spiderman.png')} resizeMode={'stretch'} />
         </View> 
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("hulk"); props.navigation.navigate("ResultScreen", {results: results})}}>
+      <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("black panther"); props.navigation.navigate("ResultScreen", {results: results})}}>
         <View style={{ width: width/3}}>
-          <Image style={styles.image} source={require('../../assets/hulk.png')} resizeMode={'stretch'} />
+          <Image style={styles.image} source={require('../../assets/blackpanther.png')} resizeMode={'stretch'} />
         </View>
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("wolverine"); props.navigation.navigate("ResultScreen", {results: results})}}>
         <View style={{ width: width/3}}>
-          <Image style={styles.image} source={require('../../assets/wolverine.webp')} resizeMode={'stretch'} />
+          <Image style={styles.image} source={require('../../assets/wolverine.png')} resizeMode={'stretch'} />
         </View>
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("iron man"); props.navigation.navigate("ResultScreen", {results: results})}}>
@@ -80,7 +82,7 @@ const MarvelIcons = (props) => {
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("thor"); props.navigation.navigate("ResultScreen", {results: results})}}>
         <View style={{ width: width/3}}>
-          <Image style={styles.image} source={require('../../assets/thor.webp')} resizeMode={'stretch'} />
+          <Image style={styles.image} source={require('../../assets/thor.png')} resizeMode={'stretch'} />
         </View>
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.5} onPress = {function(){searchApi("captain america"); props.navigation.navigate("ResultScreen", {results: results})}}>

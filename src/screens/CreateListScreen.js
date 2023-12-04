@@ -51,7 +51,7 @@ const CreateListScreen = (props) => {
           <Button 
             title = {"Add New List"} 
             color="gold"
-            onPress={() => props.navigation.navigate('HomeScreen')}
+            onPress={() => props.navigation.navigate('CurrentList')}
           />
         </View>
         

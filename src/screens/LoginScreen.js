@@ -25,16 +25,17 @@ const LoginScreen = (props) => {
 	}
 
   //handler submit function
+  /*
 	const handleSubmit = () => {
         if(validateForm()){
-        props.navigation.navigate("HomeScreen")
+        props.navigation.navigate("Home")
         console.log("Submitted", username, password);
         setUsername("");
         setPassword("");
         setErrors({});
 		  }
 		}
-	
+	*/
 
   return (
     <View style = {styles.root}>
@@ -68,7 +69,7 @@ const LoginScreen = (props) => {
         <Button 
           title = {"Login"} 
           color="gold"
-          onPress={() => ( handleSubmit )} />
+          onPress={() => ( props.navigation.navigate("Character") )} />
 
           {/*  onPress={() => props.navigation.navigate('HomeScreen')} */}
         </View>

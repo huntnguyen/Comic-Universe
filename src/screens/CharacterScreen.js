@@ -2,6 +2,8 @@
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image} from "react-native";
 import bg from '../../assets/comicbg.gif'
+import comicbg from '../../assets/comicbg3.jpeg'
+import BottomNavBar from "../components/BottomNavBar";
 import DCIcons from "../components/DCIcons";
 import MarvelIcons from "../components/MarvelIcons";
 
@@ -11,7 +13,7 @@ const CharacterScreen =(props) => {
     <ImageBackground
       style={styles.container}
       imageStyle={styles.image}
-      source={bg}
+      source={comicbg}
       resizeMode='cover'
     >
       {/* header info text */}
@@ -23,11 +25,10 @@ const CharacterScreen =(props) => {
       
       {/* body display images */}
       <View style={styles.center}>
-        <Image style ={styles.image2} source={require('../../assets/marvellogo.png')}/>
-        <MarvelIcons />
-        <Image style={styles.image3} source={require('../../assets/dclogo.png')}/>
-        <DCIcons />
+      <MarvelIcons navigation={props.navigation}/>
+      <DCIcons navigation={props.navigation}/>
       </View>
+      <BottomNavBar/>
     </ImageBackground>
   );
 };
@@ -37,27 +38,30 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     backgroundColor: 'black',
+    paddingTop: 60
   },
-  image:{
-    opacity: .5
+  backgroundImage: {
+    flex: 1, 
+    width: 100, 
+    height: 75, 
+    resizeMode: 'contain',
   },
   text:{
     textAlign: 'center',
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'yellow',
-    textShadowColor: 'gold',
-    textShadowRadius: 20,
+    color: 'white',
   },
   image2:{
-    width: 200,
+    width: 100,
     height: 100,
-    marginTop: 20,
+    resizeMode: 'contain' 
   },
   image3:{
-    width: 150,
-    height: 150,
+    width: 450,
+    height: 500,
     marginTop: 20,
+    resizeMode: 'contain'
   },
   center:{
     flex: 1,
@@ -65,13 +69,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textBox:{
-    margin: 20,
-    padding: 10,
-    borderWidth: 2,
-    borderColor: 'yellow',
-    borderRadius: 10,
-    backgroundColor: "blue"
-  }
+    margin: 1,
+    padding: 25,
+    borderWidth: 3,
+    borderColor: 'white',
+    borderRadius: 1,
+    backgroundColor: '#224878'
+  },
 });
 
 export default CharacterScreen;
