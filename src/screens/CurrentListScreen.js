@@ -2,6 +2,7 @@
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image, TextInput} from "react-native";
 import bg from '../../assets/comicbg.gif'
+import BottomNavBar from "../components/BottomNavBar";
 import Images from "../components/Images";
 
 
@@ -18,11 +19,7 @@ const CurrentListScreen = (props) => {
       >
         {/* header name */}
         <View style={styles.header}>
-           <Text style={styles.textHeader}>Current List</Text>
-        </View>
-
-        <View style={styles.info1}>
-           <Text style={styles.text1}>MOST RECENT ADDED COMICS: </Text>
+           <Text style={styles.textHeader}>List Name: Current List</Text>
         </View>
         <View style={styles.listings}>
             <View style={styles.info}>
@@ -63,59 +60,7 @@ const CurrentListScreen = (props) => {
             </View>
             
         </View>
-
-       
-        {/* functional buttons: "Add Friends", "Favourite List", "Favourite Comics" */}
-        <View style={styles.screenButtons}>
-            <View style={styles.button1}>
-            <Button 
-            title = {"Create List"} 
-            color="cyan"
-            onPress={() => props.navigation.navigate('HomeScreen')}
-            />
-            </View>
-            <View style={styles.button1}>
-            <Button 
-            title = {"View User's List"} 
-            color="cyan"
-            onPress={() => props.navigation.navigate('HomeScreen')}
-            />
-            </View>
-
-            <View style={styles.button1}>
-            <Button 
-            title = {"View Comics"} 
-            color="cyan"
-            onPress={() => props.navigation.navigate('HomeScreen')}
-            />
-            </View>
-        </View>
-        
-       {/* Navigation buttons: "Home", "List", "Profile" */}
-        <View style={styles.buttonContainer}>
-            <View style={styles.button}>
-            <Button 
-            title = {"HOME"} 
-            color="gold"
-            onPress={() => props.navigation.navigate('Home')}
-            />
-            </View>
-            <View style={styles.button}>
-            <Button 
-            title = {"LIST"} 
-            color="gold"
-            onPress={() => props.navigation.navigate('CreateList')}
-            />
-            </View>
-            <View style={styles.button}>
-            <Button 
-            title = {"PROFILE"} 
-            color="gold"
-            onPress={() => props.navigation.navigate('Profile')}
-            />
-            </View>
-        </View>
-        
+      <BottomNavBar/>
       </ImageBackground>
     </View>
   );
@@ -132,20 +77,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   image: {
-    opacity: .5
-  },
-  header:{
-    justifyContent: "center",
-    alignItems: 'center',
-    textAlign: "center"
-
+    height: 800,
+    width: 700,
   },
   text1: {
     textAlign: 'left', 
     fontSize: 20, 
     fontWeight: '800', 
-    color: 'yellow',
-    textShadowColor: 'tan', textShadowRadius: 30,
+    color: 'white',
     marginBottom: 3,
     textAlign: 'left',
   },
@@ -153,17 +92,16 @@ const styles = StyleSheet.create({
     textAlign: 'left', 
     fontSize: 15, 
     fontWeight: '800', 
-    color: 'yellow',
-    textShadowColor: 'tan', textShadowRadius: 30,
+    color: 'white',
+    textShadowRadius: 30,
     marginBottom: 6,
     textAlign: 'left',
   },
   textHeader: {
     textAlign: 'center', 
-    fontSize: 55, 
+    fontSize: 30, 
     fontWeight: '800', 
-    color: 'yellow',
-    textShadowColor: 'tan', 
+    color: 'white', 
     textShadowRadius: 30,
     marginBottom: 10,
     marginTop: 50,
@@ -177,7 +115,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
   },
   listings:{
-    height: 300
+    height: 603
   },
   button: {
     alignItems: 'center',

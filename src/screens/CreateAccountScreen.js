@@ -66,10 +66,10 @@ const CreateAccountScreen = (props) => {
         </View>
 
         <View style={styles.button}>
-          <Button
-            title={"Create an Account"}
+          <Button 
+            title = {"Create an Account"} 
             color="gold"
-            onPress={handleCreateAccount}
+            onPress={() => props.navigation.navigate('Profile')}
           />
         </View>
       </ImageBackground>
@@ -89,14 +89,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   image: {
-    opacity: .5
+    height: 800,
+    width: 700,
   },
   text: {
     textAlign: 'center', 
     fontSize: 55, 
     fontWeight: 'bold', 
-    color: 'yellow',
-    textShadowColor: 'tan', textShadowRadius: 30,
+    color: 'white',
+    textShadowRadius: 30,
     marginBottom: 20
   },
   button: {
@@ -104,14 +105,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 70,
     borderWidth: 5,
-    borderColor: 'yellow',
+    borderColor: 'white',
     elevation: 3,
-    backgroundColor: 'blue',
+    backgroundColor: '#224878',
     color: 'red',
-    width: 400,
-    height: 100,
+    width: 175,
+    height: 75,
     marginBottom: 10
   },
   image2: {
@@ -122,13 +123,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 70,
     borderWidth: 5,
-    borderColor: 'yellow',
+    borderColor: '#224878',
     elevation: 3,
     backgroundColor: '#fff',
     color: 'red',
-    width: 400,
+    width: 375,
     height: 100,
     marginBottom: 10,
     color: 'red'

@@ -2,6 +2,7 @@
 import React from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image, TextInput} from "react-native";
 import bg from '../../assets/comicbg.gif'
+import BottomNavBar from "../components/BottomNavBar";
 import Images from "../components/Images";
 
 {/* main component: CreateListScreen */}
@@ -22,39 +23,30 @@ const CreateListScreen = (props) => {
         {/* text input sections */}
         <View><Text style={styles.text1}>Enter List Name:</Text></View>
         <View style={styles.button2}>
-            <TextInput placeholder="Enter New Username"/>
+            <TextInput placeholder="List Name"/>
         </View>
         <View><Text style={styles.text1}>Enter List Description:</Text></View>
         <View style={styles.button1}>
-            <TextInput placeholder="Enter New Password"/>
+            <TextInput placeholder="List Description"/>
         </View>
 
         {/* add comic tabs*/}
-        <View><Text style={styles.text1}>Add Comics:</Text></View>
-        <View style= {styles.comiclistcontainer} >
-            <View style = {styles.comiclist}><Text>  Comic 1  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 2  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 3  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 4  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 5  </Text></View>
+        <View style = {styles.button}>
+        <Button 
+            title = {"Add Comics"} 
+            color="white"
+            onPress={() => props.navigation.navigate('Search')}
+          />
         </View>
-        <View style= {styles.comiclistcontainer} >
-            <View style = {styles.comiclist}><Text>  Comic 6  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 7  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 8  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 9  </Text></View>
-            <View style = {styles.comiclist}><Text>  Comic 10  </Text></View>
-        </View>
-
         {/* main button: Add New List */}
         <View style={styles.button}>
           <Button 
             title = {"Add New List"} 
-            color="gold"
+            color="white"
             onPress={() => props.navigation.navigate('CurrentList')}
           />
         </View>
-        
+      <BottomNavBar/>  
       </ImageBackground>
     </View>
   );
@@ -72,22 +64,23 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   image: {
-    opacity: .5
+    height: 800,
+    width: 700,
   },
   text: {
     textAlign: 'center', 
     fontSize: 55, 
     fontWeight: 'bold', 
-    color: 'yellow',
-    textShadowColor: 'tan', textShadowRadius: 30,
+    color: 'white',
+    textShadowRadius: 30,
     marginBottom: 20
   },
   text1: {
     textAlign: 'left', 
     fontSize: 19, 
     fontWeight: 'bold', 
-    color: 'yellow',
-    textShadowColor: 'tan', textShadowRadius: 30,
+    color: 'white',
+    textShadowRadius: 30,
     marginBottom: 5
   },
 
@@ -96,17 +89,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 70,
     borderWidth: 5,
-    borderColor: 'yellow',
+    borderColor: 'white',
     elevation: 3,
-    backgroundColor: 'blue',
+    backgroundColor: '#224878',
     color: 'red',
-    width: 430,
+    width: 393,
     height: 100,
-    marginBottom: 5,
-    marginTop: 20,
-
+    marginBottom: 10
   },
   image2: {
     marginBottom: 20,
@@ -118,11 +109,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     borderWidth: 5,
-    borderColor: 'yellow',
+    borderColor: '#224878',
     elevation: 3,
     backgroundColor: 'lightcyan',
     color: 'red',
-    width: 425,
+    width: 393,
     height: 150,
     marginBottom: 15,
     color: 'red'
@@ -134,22 +125,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     borderWidth: 5,
-    borderColor: 'yellow',
+    borderColor: '#224878',
     elevation: 3,
     backgroundColor: 'lightcyan',
     color: 'red',
-    width: 427,
+    width: 393,
     height: 50,
-    marginBottom: 15,
+    marginBottom: 57,
     
   },
   comiclist:{
-    backgroundColor: "lightyellow",
+    backgroundColor: "white",
     width: 80,
     height: 60,
     marginBottom: 1,
     borderWidth: 3,
-    borderColor: 'yellow',
+    borderColor: 'white',
     marginHorizontal: 3
 
   },

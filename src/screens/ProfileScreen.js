@@ -28,40 +28,42 @@ const ProfileScreen = (props) => {
                 <Images style = {styles.image1} imageSource={require('../../assets/profilepic.png')}/>
             </View>
             <View>
-                <Text style={styles.text}>User: {username} </Text>
+                <Text style={styles.text}>User: Heromachi </Text>
                 <Text style={styles.text}>Ratings: ⭐⭐⭐</Text>
                 <Text style={styles.text}>Followers: 223 </Text>
                 <Text style={styles.text}>Total List: 94</Text>
             </View> 
         </View>
 
-        <View><TouchableOpacity><Text style={styles.text} >                 Edit Photo  ⏏️ </Text></TouchableOpacity></View>
+        <View><TouchableOpacity><Text style={styles.text}>                     Edit Photo  ⏏️</Text></TouchableOpacity></View>
 
         {/* functional buttons: "Add Friends", "Favourite List", "Favourite Comics" */}
         <View style={styles.screenButtons}>
             <View style={styles.button1}>
             <Button 
-            title = {"Add Friends"} 
-            color="cyan"
-            onPress={() => props.navigation.navigate('HomeScreen')}
+            title = {"Create List"} 
+            color="white"
+            onPress={() => props.navigation.navigate('CreateList')}
             />
             </View>
 
             <View style={styles.button1}>
             <Button 
-            title = {"Favourite List"} 
-            color="cyan"
-            onPress={() => props.navigation.navigate('HomeScreen')}
+            title = {"View My Lists"} 
+            color="white"
+            onPress={() => props.navigation.navigate('CurrentList')}
             />
             </View>
 
             <View style={styles.button1}>
             <Button 
-            title = {"Favourite Comics"} 
-            color="cyan"
-            onPress={() => props.navigation.navigate('HomeScreen')}
+            title = {"Sign Out"} 
+            color="white"
+            onPress={() => props.navigation.navigate('Welcome')}
             />
             </View>
+        </View>
+        <View>
         </View>
        <BottomNavBar/> 
       </ImageBackground>
@@ -80,7 +82,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   image: {
-    opacity: .5
+    height: 700,
+    width: 700,
+    justifyContent: "center",
+    resizeMode: "contain"
   },
   header:{
     justifyContent: "center",
@@ -89,11 +94,10 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    textAlign: 'left', 
-    fontSize: 20, 
+    fontSize: 15, 
     fontWeight: '800', 
-    color: 'yellow',
-    textShadowColor: 'tan', textShadowRadius: 30,
+    color: 'white', 
+    textShadowRadius: 30,
     marginBottom: 40,
     textAlign: 'left',
   },
@@ -101,8 +105,7 @@ const styles = StyleSheet.create({
     textAlign: 'center', 
     fontSize: 55, 
     fontWeight: '800', 
-    color: 'yellow',
-    textShadowColor: 'tan', 
+    color: 'white', 
     textShadowRadius: 30,
     marginBottom: 10,
     marginTop: 20,
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
   info:{
     flexDirection: 'row',
     flex: 1,
-    marginTop: 30,
+    marginTop: 20
   },
   button: {
     alignItems: 'center',
@@ -120,9 +123,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 4,
     borderWidth: 5,
-    borderColor: 'yellow',
+    borderColor: 'white',
     elevation: 3,
-    backgroundColor: 'blue',
+    backgroundColor: '#224878',
     color: 'red',
     width: 140,
     height: 100,
@@ -133,14 +136,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   image1: {
-    marginBottom: 5,
-    width: 5,
-    height: 5,
-    resizeMode: 'cover',
+    width: 100,
+    height: 100,
+  },
+  image2: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width: 10, 
+    height: 10,
   },
   screenButtons:{
-    marginBottom: 40
-
+    marginBottom: 40,
+    alignItems: 'center',
   },
 
   button1: {
@@ -150,9 +158,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 3,
     borderRadius: 30,
     borderWidth: 5,
-    borderColor: 'yellow',
+    borderColor: 'white',
     elevation: 3,
-    backgroundColor: '#113',
+    backgroundColor: '#224878',
     color: 'red',
     width: 190,
     height: 60,

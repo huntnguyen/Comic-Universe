@@ -7,7 +7,7 @@ import SearchBar from '../components/SearchBar';
 const SearchScreen = function (props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageURL, setImageUrl] = useState("");
 
   const imageResults = async function (image) {
     try {
@@ -22,7 +22,7 @@ const SearchScreen = function (props) {
       );
      
       
-      setImageUrl(response.data.results[5].image.original_url); 
+      setImageUrl(response.data.results[0].image.original_url); 
     } catch (e) {
       console.log(e, "error");
       
@@ -52,6 +52,12 @@ const SearchScreen = function (props) {
       
     }
   };
+  /*
+  useEffect(() => {
+    imageResults(searchTerm);
+    }, []);
+    */
+  //{imageURL && <Image source={{ uri: imageURL }} style={styles.characterImage} />}
 
   return ( 
     <View style={styles.root}>
@@ -110,6 +116,14 @@ const styles = StyleSheet.create({
     color: 'white',
     padding: 10
   },
+  characterImage: {
+    marginBottom: 5,
+    width: 10,
+    height: 10,
+    width: 555,
+    height: 350,
+    resizeMode: 'contain',
+  }
 });
 
 export default SearchScreen;
