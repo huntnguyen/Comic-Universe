@@ -8,7 +8,7 @@ import Images from "../components/Images";
 
 {/* main component: ProfileScreen */}
 const ProfileScreen = (props) => {
-
+  const username = props.navigation.getParam("username");
   return (
     <View style = {styles.root}>
       <ImageBackground
@@ -28,7 +28,7 @@ const ProfileScreen = (props) => {
                 <Images style = {styles.image1} imageSource={require('../../assets/profilepic.png')}/>
             </View>
             <View>
-                <Text style={styles.text}>User: Heromachi </Text>
+                <Text style={styles.text}>User: {username} </Text>
                 <Text style={styles.text}>Ratings: ⭐⭐⭐</Text>
                 <Text style={styles.text}>Followers: 223 </Text>
                 <Text style={styles.text}>Total List: 94</Text>

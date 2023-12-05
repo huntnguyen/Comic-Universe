@@ -11,6 +11,11 @@ import CurrentListScreen from "./src/screens/CurrentListScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
 import UserListScreen from "./src/screens/UserListScreen";
+import ListScreen from "./src/screens/ListScreen";
+import ListShowScreen from "./src/screens/ListShowScreen";
+import CreateListScreen2 from "./src/screens/CreateListScreen2";
+import EditScreen from "./src/screens/EditScreen";
+import { Provider } from "./src/context/ListContext";
 
 const navigator = createStackNavigator({
         Welcome : WelcomeScreen,
@@ -24,6 +29,10 @@ const navigator = createStackNavigator({
         CurrentList: CurrentListScreen,
         UserList: UserListScreen,
         ResultScreen: ResultScreen,
+        List: ListScreen,
+        Show: ListShowScreen,
+        Create: CreateListScreen2,
+        Edit: EditScreen
 },
 {
         initialRouteName: "Welcome",
@@ -33,5 +42,10 @@ const navigator = createStackNavigator({
 
 });
 
+const App = createAppContainer(navigator);
 
-export default createAppContainer(navigator);
+export default () => {
+  return <Provider>
+      <App />
+  </Provider>
+}

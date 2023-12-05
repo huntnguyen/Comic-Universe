@@ -13,7 +13,7 @@ const BottomNavBar = ({ navigation }) => {
     navigation.navigate('Profile');
   };
   const navigateToCreateListScreen = () => {
-    navigation.navigate('CreateList');
+    navigation.navigate('List');
   };
 
   return (

@@ -1,5 +1,5 @@
 {/* imports */}
-import React from "react";
+import React, {useState} from "react";
 import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Image, TextInput} from "react-native";
 import bg from '../../assets/comicbg.gif'
 import Images from "../components/Images";
@@ -7,41 +7,74 @@ import Images from "../components/Images";
 {/* main component: CreateAccontScreen */}
 const CreateAccountScreen = (props) => {
 
+  const [password, setPassword] = useState("");
+  const [reEnteredPassword, setReEnteredPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  const handleCreateAccount = () => {
+    const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|])(?=.*[a-zA-Z]).{5,}$/;
+
+    if (!passwordRegex.test(password)) {
+      alert("Password should be at least 5 characters long with a special character and a number.");
+      return;
+    }
+
+    if (password !== reEnteredPassword) {
+      alert("Passwords do not match. Please re-enter the same password.");
+      return;
+    }
+    
+    props.navigation.navigate('Profile', { username });
+  }
+
   return (
-    <View style = {styles.root}>
+    <View style={styles.root}>
       <ImageBackground
-        style = {styles.container}
+        style={styles.container}
         imageStyle={styles.image}
-        source = {bg}
-        resizeMode = 'cover'
+        source={bg}
+        resizeMode='cover'
       >
-        {/* Header */}
-        <Text style={styles.text}>Create{"\n"} Account</Text>
-        
-        {/* homepage picture */}
-        <Images style = {styles.image2} imageSource={require('../../assets/superhero.png')}/>
+        <Text style={styles.text}>Create{"\n"}Account</Text>
 
-        {/* text inputs */}
-        <View style={styles.textInputs}>
-           <TextInput placeholder="Enter New Username"/>
-        </View>
-        <View style={styles.textInputs}>
-           <TextInput placeholder="Enter New Password"/>
-        </View>
+        <Images style={styles.image2} imageSource={require('../../assets/superhero.png')} />
 
-        {/* main button */}
-        <View style={styles.button}>
-          <Button 
-            title = {"Create an Account"} 
-            color="gold"
-            onPress={() => props.navigation.navigate('Profile')}
+        <View style={styles.textInputs}>
+          <TextInput
+            placeholder="Enter New Username"
+            value={username}
+            onChangeText={(text) => setUsername(text)}
           />
         </View>
-        
+
+        <View style={styles.textInputs}>
+          <TextInput
+            placeholder="Enter New Password"
+            //secureTextEntry
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+          />
+        </View>
+
+        <View style={styles.textInputs}>
+          <TextInput
+            placeholder="Re-enter New Password"
+            //secureTextEntry
+            value={reEnteredPassword}
+            onChangeText={(text) => setReEnteredPassword(text)}
+          />
+        </View>
+
+        <View style={styles.button}>
+          <Button
+            title={"Create an Account"}
+            color="gold"
+            onPress={handleCreateAccount}
+          />
+        </View>
       </ImageBackground>
     </View>
   );
-  
 };
 
 {/* stylesheet */}

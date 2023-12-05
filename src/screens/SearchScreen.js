@@ -46,7 +46,7 @@ const SearchScreen = function (props) {
       response.data.results.forEach((issue) => {
         imageResults(issue.image.original_url);
       });
-      } 
+            } 
       catch (e) {
       console.log(e, "error");
       
@@ -69,7 +69,7 @@ const SearchScreen = function (props) {
           searchApi(searchTerm);
         }}
       />
-      <FlatList
+            <FlatList
         data={results}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
