@@ -4,7 +4,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity, ImageBackground, Imag
 import bg from '../../assets/comicbg.gif'
 import Images from "../components/Images";
 
-{/* main component: CreateAccontScreen */}
+{/* main component: CreateAccountScreen */}
 const CreateAccountScreen = (props) => {
 
   const [password, setPassword] = useState("");
@@ -67,9 +67,9 @@ const CreateAccountScreen = (props) => {
 
         <View style={styles.button}>
           <Button 
-            title = {"Create an Account"} 
+            title={"Create"} 
             color="gold"
-            onPress={() => props.navigation.navigate('Profile')}
+            onPress={handleCreateAccount}
           />
         </View>
       </ImageBackground>

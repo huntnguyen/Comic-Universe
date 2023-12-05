@@ -28,7 +28,7 @@ const ProfileScreen = (props) => {
                 <Images style = {styles.image1} imageSource={require('../../assets/profilepic.png')}/>
             </View>
             <View>
-                <Text style={styles.text}>User: Heromachi </Text>
+                <Text style={styles.text}>User: {username} </Text>
                 <Text style={styles.text}>Ratings: ⭐⭐⭐</Text>
                 <Text style={styles.text}>Followers: 223 </Text>
                 <Text style={styles.text}>Total List: 94</Text>
@@ -43,7 +43,7 @@ const ProfileScreen = (props) => {
             <Button 
             title = {"Create List"} 
             color="white"
-            onPress={() => props.navigation.navigate('CreateList')}
+            onPress={() => props.navigation.navigate('List')}
             />
             </View>
 
@@ -51,7 +51,7 @@ const ProfileScreen = (props) => {
             <Button 
             title = {"View My Lists"} 
             color="white"
-            onPress={() => props.navigation.navigate('CurrentList')}
+            onPress={() => props.navigation.navigate('List')}
             />
             </View>
 
