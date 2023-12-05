@@ -6,8 +6,8 @@ const BottomNavBar = ({ navigation }) => {
   const navigateToWelcomeScreen = () => {
     navigation.navigate('Character');
   };
-  const navigateToCharacterScreen = () => {
-    navigation.navigate('Home');
+  const navigateToSearchScreen = () => {
+    navigation.navigate('Search');
   };
   const navigateToProfileScreen = () => {
     navigation.navigate('Profile');
@@ -25,7 +25,7 @@ const BottomNavBar = ({ navigation }) => {
         <TouchableOpacity onPress={navigateToWelcomeScreen} style={styles.button}>
           <Text style={styles.buttonText}>Home</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={navigateToCharacterScreen} style={styles.button}>
+        <TouchableOpacity onPress={navigateToSearchScreen} style={styles.button}>
           <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={navigateToCreateListScreen} style={styles.button}>

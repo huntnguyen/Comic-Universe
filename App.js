@@ -1,7 +1,7 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import WelcomeScreen from "./src/screens/WelcomeScreen";
-import HomeScreen from "./src/screens/HomeScreen";
+import SearchScreen from "./src/screens/SearchScreen";
 import CharacterScreen from "./src/screens/CharacterScreen";
 import ResultScreen from "./src/screens/ResultScreen";
 import CharacterDetailScreen from "./src/screens/CharacterDetailScreen";
@@ -15,7 +15,7 @@ import UserListScreen from "./src/screens/UserListScreen";
 const navigator = createStackNavigator({
         Welcome : WelcomeScreen,
         Login: LoginScreen,
-        Home: HomeScreen,
+        Search: SearchScreen,
         Profile: ProfileScreen,
         Character: CharacterScreen,
         CharacterDetail: CharacterDetailScreen,
@@ -28,7 +28,7 @@ const navigator = createStackNavigator({
 {
         initialRouteName: "Welcome",
         defaultNavigationOptions: {
-            title : "Business Search"
+            title : "Comics Universe"
         }
 
 });

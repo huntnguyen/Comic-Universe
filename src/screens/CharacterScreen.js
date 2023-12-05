@@ -13,7 +13,7 @@ const CharacterScreen =(props) => {
     <ImageBackground
       style={styles.container}
       imageStyle={styles.image}
-      source={comicbg}
+      source={bg}
       resizeMode='cover'
     >
       {/* header info text */}

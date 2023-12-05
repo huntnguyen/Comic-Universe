@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { Text, StyleSheet, View, Button, Image, FlatList, TouchableOpacity, ImageBackground} from "react-native";
 import API from "../api/API"
-import bg from '../../assets/comicbg3.jpeg'
+import bg from '../../assets/comicbg.gif'
 import SearchBar from '../components/SearchBar';
 
-const HomeScreen = function (props) {
+const SearchScreen = function (props) {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
@@ -112,4 +112,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default SearchScreen;
