@@ -35,8 +35,6 @@ const ProfileScreen = (props) => {
             </View> 
         </View>
 
-        <View><TouchableOpacity><Text style={styles.text}>                     Edit Photo  ⏏️</Text></TouchableOpacity></View>
-
         {/* functional buttons: "Add Friends", "Favourite List", "Favourite Comics" */}
         <View style={styles.screenButtons}>
             <View style={styles.button1}>
@@ -82,10 +80,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   image: {
-    height: 700,
+    height: 800,
     width: 700,
-    justifyContent: "center",
-    resizeMode: "contain"
+
   },
   header:{
     justifyContent: "center",
