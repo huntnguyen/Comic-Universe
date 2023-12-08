@@ -8,6 +8,14 @@ Shortcomings:
 
 We were not able to directly add comics to lists by clicking on them and we were not able to create user functionalities such as following other users, liking other lists, and etc. to build a community.
 
+Other Notes:
+
+These screens were not used in our final version. These are basically templates that we hard coded that we did not end up using.
+
+CreateListScreen.js
+UserListScreen.js
+CharacterDetailScreen.js
+
 Resources and Images Used:
 
 Comic Vine API:
