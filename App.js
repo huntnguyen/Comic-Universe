@@ -15,6 +15,7 @@ import ListScreen from "./src/screens/ListScreen";
 import ListShowScreen from "./src/screens/ListShowScreen";
 import CreateListScreen2 from "./src/screens/CreateListScreen2";
 import EditScreen from "./src/screens/EditScreen";
+import DetailScreen from "./src/screens/DetailScreen";
 import { Provider } from "./src/context/ListContext";
 
 const navigator = createStackNavigator({
@@ -32,7 +33,9 @@ const navigator = createStackNavigator({
         List: ListScreen,
         Show: ListShowScreen,
         Create: CreateListScreen2,
-        Edit: EditScreen
+        Edit: EditScreen,
+        DetailScreen: DetailScreen,
+
 },
 {
         initialRouteName: "Welcome",

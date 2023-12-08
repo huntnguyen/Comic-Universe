@@ -81,7 +81,7 @@ const SearchScreen = function (props) {
         renderItem={({ item }) => (
           <View>
             <Text style = {styles.text}>Name: {item.name}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.5} onPress = {function(){props.navigation.navigate("DetailScreen", {item: item})}}>
             <Image source={{ uri: item.image.original_url }}
             style={styles.image}  />
            </TouchableOpacity>
